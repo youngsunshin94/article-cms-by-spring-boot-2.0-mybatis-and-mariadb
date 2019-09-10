@@ -25,7 +25,8 @@ public class ArticleController {
 	public String showList(Model aModel) {
 		List<Article> list = articleService.getList();
 		
-		aModel.addAttribute("list",list);
+		aModel.addAttribute("list",list); 
+		// request.setAttribute("list",list) 와 똑같은 표현
 		
 		log.info("list : " + list);
 		return "article/list";
