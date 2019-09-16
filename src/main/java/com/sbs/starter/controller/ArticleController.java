@@ -24,7 +24,7 @@ public class ArticleController {
 	@Autowired
 	ArticleService articleService;
 	
-	@RequestMapping("article/list")
+	@RequestMapping("/article/list")
 	public String showList(Model aModel) {
 		List<Article> list = articleService.getList();
 		int totalCount = articleService.getTotalCount();
