@@ -16,6 +16,8 @@ public interface ArticleService {
 
 	public void delete(long id);
 
-	public void modify(Map<String, Object> param); 
+	public void modify(Map<String, Object> param);
+
+	public void hitUp(long id); 
 
 }

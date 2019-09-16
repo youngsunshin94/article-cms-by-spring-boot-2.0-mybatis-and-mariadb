@@ -36,4 +36,10 @@
 		WHERE id = #{id}
 	</insert>
 	
+	<insert id="hitUp" parameterType ="long">
+		UPDATE article
+		SET hit = hit + 1
+		WHERE id = #{id}
+	</insert>
+	
 </mapper>

@@ -7,7 +7,8 @@
 	<!-- el의 장점은 requst.getAttribute("article")할 필요없다. -->
 		<c:forEach items="${list}" var="article">
 			<section>
-				<a href="./detail?id=${article.id}">번호 : ${article.id}, 제목 : ${article.title}</a>
+				<a href="./detail?id=${article.id}">번호 : ${article.id}, 제목 : ${article.title}
+				, 조회수 : ${article.hit}</a>
 			</section>
 			<hr>
 		</c:forEach>
