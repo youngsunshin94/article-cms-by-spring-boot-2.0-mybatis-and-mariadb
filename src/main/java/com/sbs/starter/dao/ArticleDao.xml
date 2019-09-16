@@ -28,4 +28,12 @@
 		title = #{title},
 		body = #{body}
 	</insert>
+
+	<insert id="modify" parameterType ="map">
+		UPDATE article
+		SET title = #{title},
+		body = #{body}
+		WHERE id = #{id}
+	</insert>
+	
 </mapper>
