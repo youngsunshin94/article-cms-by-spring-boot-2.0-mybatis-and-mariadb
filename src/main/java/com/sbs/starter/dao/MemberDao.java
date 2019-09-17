@@ -15,4 +15,6 @@ public interface MemberDao {
 
 	public void join(Map<String, Object> param);
 
+	public Member getMatchedOne(String loginId, String loginPw);
+
 }

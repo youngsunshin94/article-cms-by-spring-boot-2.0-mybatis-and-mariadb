@@ -68,4 +68,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.getOne(loginedMemberId);
 	}
 
+	@Override
+	public Member getMatchedOne(String loginId, String loginPw) {
+		
+		return memberDao.getMatchedOne(loginId,loginPw);
+	}
+
 }
