@@ -16,26 +16,27 @@ public class BeforeActionInterceptor implements HandlerInterceptor {
 	
 	@Autowired
 	MemberService memberService;
-	
+
 	@Override
-	public boolean preHandle(HttpServletRequest request , HttpServletResponse response, Object handler) throws Exception {
-		
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+
 		boolean isLogined = false;
 		long loginedMemberId = 0;
 		Member loginedMember = null;
-		
+
 		HttpSession session = request.getSession();
-		
-		if( session.getAttribute("loginedMemberId") != null) {
+
+		if ( session.getAttribute("loginedMemberId") != null ) {
 			isLogined = true;
 			loginedMemberId = (long)session.getAttribute("loginedMemberId");
 			loginedMember = memberService.getOne(loginedMemberId);
 		}
-		 
+
 		request.setAttribute("isLogined", isLogined);
 		request.setAttribute("loginedMemberId", loginedMemberId);
-		request.setAttribute("LoginedMember", loginedMember);
-		
+		request.setAttribute("loginedMember", loginedMember);
+
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}
 	
