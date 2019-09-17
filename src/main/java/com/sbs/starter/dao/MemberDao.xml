@@ -3,10 +3,19 @@
 
 <mapper namespace="com.sbs.starter.dao.MemberDao">
 
-	<select id="getLoginIdDupCount" parameterType="String" resultType="int">
+	<select id="getLoginIdDupCount" parameterType="String"
+		resultType="int">
 		SELECT COUNT(*)
 		FROM member
 		WHERE loginId = #{loginId}
 	</select>
 
+	<insert id="join" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO member
+		SET regDate = now(),
+		loginId = #{loginId},
+		loginPw = #{loginPw}
+	</insert>
+	
+	
 </mapper>
